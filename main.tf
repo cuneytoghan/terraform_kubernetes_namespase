@@ -17,3 +17,26 @@ resource "kubernetes_resource_quota" "podlimit" {
     scopes = ["BestEffort"]
   }
 }
+
+resource "kubernetes_limit_range" "limitrange" {
+  metadata {
+    name = "limitrange"
+    namespace = var.namespace
+  }
+  spec {
+    limit {
+      type = "Pod"
+      max = {
+        cpu    = "2000m"
+        memory = "4Gi"
+      }
+    }
+    limit {
+      type = "Container"
+      default = {
+        cpu    = "500m"
+        memory = "5Gi"
+      }
+    }
+  }
+}
