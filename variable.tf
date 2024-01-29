@@ -12,7 +12,7 @@ variable podlimit {
 variable pod_max_cpu_limit {
   type        = string
   default     = ""
-  description = "please se the pod size"
+  description = "please set the pod size"
 }
 
 variable pod_max_memory_limit {
@@ -30,4 +30,17 @@ variable container_max_memory_limit {
   type        = string
   default     = ""
   description = "please set the container memory size"
+}
+
+
+variable annotations {
+  type        = map
+  default     = {}
+  description = "please provide annotations"
+}
+
+variable labels {
+  type        = map
+  default     = {}
+  description = "please provide labels"
 }

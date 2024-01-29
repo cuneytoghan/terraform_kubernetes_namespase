@@ -2,6 +2,8 @@
 resource "kubernetes_namespace" "my-name-space" {
   metadata {
     name = var.namespace
+    annotations = var.annotations
+    labels = var.labels
   }
 }
 
@@ -40,3 +42,4 @@ resource "kubernetes_limit_range" "limitrange" {
     }
   }
 }
+
