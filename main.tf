@@ -1,5 +1,6 @@
-resource "kubernetes_namespace" "example" {
+#create a name space 
+resource "kubernetes_namespace" "my-name-space" {
   metadata {
-    name = var.namespace
+    name = "my-first-namespace"
   }
-
+}
