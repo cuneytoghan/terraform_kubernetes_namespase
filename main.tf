@@ -27,15 +27,15 @@ resource "kubernetes_limit_range" "limitrange" {
     limit {
       type = "Pod"
       max = {
-        cpu    = "2000m"
-        memory = "4Gi"
+        cpu    = var.pod_max_cpu_limit
+        memory = var.pod_max_memory_limit
       }
     }
     limit {
       type = "Container"
       default = {
-        cpu    = "500m"
-        memory = "5Gi"
+        cpu    = var.container_max_cpu_limit
+        memory = var.container_max_memory_limit
       }
     }
   }
