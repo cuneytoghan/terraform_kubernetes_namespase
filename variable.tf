@@ -1,5 +1,5 @@
 variable namespace {
   type        = string
   default     = ""
-  description = "please add your namespase name "
+  description = "please give a name to your namespace"
 }
