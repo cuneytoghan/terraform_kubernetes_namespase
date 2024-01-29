@@ -12,7 +12,7 @@ resource "kubernetes_resource_quota" "podlimit" {
   }
   spec {
     hard = {
-      pods = 10
+      pods = var.podlimit
     }
     scopes = ["BestEffort"]
   }
